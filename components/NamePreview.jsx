@@ -26,8 +26,8 @@ export default function NamePreview({ value, error, onChange, inputRef, previewI
       <p id="name-count" className="mt-2 text-[14px] text-warmgrey" aria-live="polite">{value.length} / {MAX_NAME_LENGTH} characters</p>
       <p className="sr-only" role="status">{value.trim() ? `Embroidery preview: ${value}` : "Their name goes here"}</p>
       {error && <p id="name-error" role="alert" className="mt-2 bg-eggshell text-[14px] text-cranberry">{error}</p>}
-      <div className="mt-4 w-40 md:hidden" aria-label="Live pocket preview">
-        <ProductImage image={previewImage} sizes="160px">
+      <div className="mt-4 w-64 max-w-full md:hidden" aria-label="Live pocket preview">
+        <ProductImage image={previewImage} sizes="256px" caption="Pocket detail">
           <NameEmbroidery name={value} position={previewImage.namePosition} />
         </ProductImage>
       </div>

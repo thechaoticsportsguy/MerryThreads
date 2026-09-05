@@ -167,7 +167,8 @@
 .gallery-track::-webkit-scrollbar { display: none; }
 .name-embroidery { container-type: inline-size; }
 .stitched-name {
-  font-size: clamp(24px, 12cqw, 40px);
+  font-size: clamp(12px, 10cqw, 40px);
+  white-space: nowrap;
   line-height: 1.2;
   -webkit-text-stroke: 0.35px var(--color-sage);
   color: var(--color-sage);
