@@ -2,6 +2,10 @@
 
 @theme {
   --color-eggshell: #FBF8F3;
+  --color-white: #FFFFFF;
+  --color-burgundy: #7A2E35;
+  --color-forest: #2F4237;
+  --color-ivory-stripe: #EDE6DA;
   --color-sage: #2F4237;
   --color-oat: #EDE6DA;
   --color-cranberry: #A63D34;
@@ -24,4 +28,149 @@
     font-weight: 400;
     line-height: 1.6;
   }
+
+  :where(a, button, input, select, textarea, summary):focus-visible {
+    outline: 2px solid var(--color-sage);
+    outline-offset: 2px;
+  }
+
+  .dark-surface
+    :where(a, button, input, select, textarea, summary):focus-visible {
+    outline-color: var(--color-eggshell);
+  }
+
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
 }
+
+@layer components {
+  .section-heading {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .button-primary {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-btn);
+    background-color: var(--color-cranberry);
+    padding: 14px 24px;
+    color: var(--color-eggshell);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration-line: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+    transition: text-decoration-color 150ms ease;
+  }
+
+  .button-primary:hover:not(:disabled) {
+    text-decoration-color: currentColor;
+  }
+
+  .button-frame {
+    display: inline-flex;
+    border-radius: var(--radius-btn);
+    background-color: var(--color-eggshell);
+    padding: 4px;
+  }
+
+  .button-frame .button-primary:focus-visible {
+    outline-color: var(--color-sage);
+  }
+
+  .text-link {
+    text-decoration-line: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+    transition: text-decoration-color 150ms ease;
+  }
+
+  .text-link:hover,
+  .text-link[aria-expanded="true"] {
+    text-decoration-color: currentColor;
+  }
+
+  .icon-button {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-btn);
+  }
+
+  .mobile-drawer {
+    position: fixed;
+    inset: 0;
+    display: none;
+    width: min(100%, 400px);
+    max-width: 100%;
+    height: 100dvh;
+    max-height: none;
+    margin: 0 0 0 auto;
+    border: 0;
+    background-color: var(--color-eggshell);
+    padding: 24px;
+    color: var(--color-sage);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .mobile-drawer[open] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-drawer::backdrop {
+    background-color: color-mix(
+      in srgb,
+      var(--color-sage) 60%,
+      transparent
+    );
+  }
+
+  .hero-enter {
+    animation: hero-fade 600ms ease-out both;
+  }
+
+  @media (min-width: 768px) {
+    .section-heading {
+      font-size: 36px;
+    }
+  }
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter {
+    animation: none;
+  }
+
+  .button-primary,
+  .text-link {
+    transition: none;
+  }
+}
+
