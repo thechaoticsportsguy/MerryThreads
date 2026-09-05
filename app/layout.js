@@ -20,6 +20,7 @@ const hankenGrotesk = Hanken_Grotesk({
 
 export const metadata = {
   title: "Merrythread",
+  icons: { icon: { url: "/logo.svg", type: "image/svg+xml", sizes: "any" } },
   description:
     "Personalized satin Christmas pajamas for the whole family. Find your favorite set and make it theirs with an embroidered name.",
 };

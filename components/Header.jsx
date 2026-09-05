@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Logo from "./Logo";
 import { useEffect, useRef, useState } from "react";
 import { colorways } from "../lib/products";
 
@@ -141,9 +142,10 @@ export default function Header({ accountHref = "/account" }) {
           href="/"
           onClick={closeShop}
           aria-label="Merrythread home"
-          className="justify-self-start font-display text-[24px] leading-tight font-normal md:text-[36px]"
+          className="inline-flex items-center gap-3 justify-self-start font-display text-[24px] leading-tight font-normal md:text-[36px]"
         >
-          Merrythread
+          <Logo />
+          <span>Merrythread</span>
         </Link>
 
         <nav aria-label="Main navigation" className="hidden md:block">
@@ -299,9 +301,10 @@ export default function Header({ accountHref = "/account" }) {
         <div className="flex items-center justify-between gap-4">
           <h2
             id="mobile-navigation-heading"
-            className="font-display text-[28px] leading-tight font-normal"
+            className="inline-flex items-center gap-3 font-display text-[28px] leading-tight font-normal"
           >
-            Merrythread
+            <Logo />
+            <span>Merrythread</span>
           </h2>
 
           <button

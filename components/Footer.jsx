@@ -1,5 +1,6 @@
 import Link from "next/link";
 import EmailSignup from "./EmailSignup";
+import Logo from "./Logo";
 
 const shopLinks = [
   { label: "Shop all pajamas", href: "/collections/all" },
@@ -29,9 +30,10 @@ export default function Footer() {
             <Link
               href="/"
               aria-label="Merrythread home"
-              className="inline-block font-display text-[36px] leading-tight font-normal"
+              className="inline-flex items-center gap-3 font-display text-[36px] leading-tight font-normal"
             >
-              Merrythread
+              <Logo />
+              <span>Merrythread</span>
             </Link>
 
             <p className="mt-4 text-[16px] leading-[1.6]">
