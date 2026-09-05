@@ -163,6 +163,18 @@
   }
 }
 
+.gallery-track { scrollbar-width: none; }
+.gallery-track::-webkit-scrollbar { display: none; }
+.name-embroidery { container-type: inline-size; }
+.stitched-name {
+  font-size: clamp(24px, 12cqw, 40px);
+  line-height: 1.2;
+  -webkit-text-stroke: 0.35px var(--color-sage);
+  color: var(--color-sage);
+  text-decoration: underline dotted var(--color-softsage);
+  text-underline-offset: 4px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-enter {
     animation: none;
