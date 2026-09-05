@@ -194,6 +194,15 @@ export default function Header({ accountHref = "/account" }) {
                 How it works
               </Link>
             </li>
+            <li>
+              <Link
+                href="/designs"
+                onClick={closeShop}
+                className="text-link inline-flex min-h-11 items-center text-[15px] font-medium"
+              >
+                Designs
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -356,6 +365,7 @@ export default function Header({ accountHref = "/account" }) {
             {[
               { href: "/pages/our-story", label: "Our story" },
               { href: "/#how-it-works", label: "How it works" },
+              { href: "/designs", label: "Designs" },
               { href: "/pages/size-guide", label: "Size guide" },
               { href: accountHref, label: "Your account" },
             ].map((link) => (
