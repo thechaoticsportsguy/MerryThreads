@@ -28,16 +28,17 @@ export default function Home() {
 
         <div className="relative z-10 mx-auto w-full max-w-[1280px] self-end px-6 py-10 [grid-area:1/1] md:py-16">
           <div className="max-w-[640px]">
+            <p className="eyebrow mb-4">The Christmas collection</p>
             <h1
               id="hero-heading"
-              className="font-display text-[36px] leading-tight font-normal md:text-[56px]"
+              className="hero-heading"
             >
-              A little more merry.
+              <em className="editorial-emphasis">A little more merry.</em>
               <br />
               A name on every set.
             </h1>
 
-            <p className="mt-4 text-[16px] leading-[1.6]">
+            <p className="mt-6 max-w-[38ch] text-[16px] leading-[1.6]">
               Personalized satin pajamas for Christmas mornings together.
             </p>
 
@@ -122,7 +123,7 @@ export default function Home() {
 
           <div>
             <h2 id="story-heading" className="section-heading">
-              A name makes it theirs
+              A name makes it <em className="editorial-emphasis">theirs</em>
             </h2>
 
             <p className="mt-6 text-[16px] leading-[1.6]">

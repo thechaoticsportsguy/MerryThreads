@@ -1,14 +1,19 @@
-import { Instrument_Serif, Hanken_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
+import { Hanken_Grotesk } from "next/font/google";
 import AnnouncementBar from "../components/AnnouncementBar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "./globals.css";
 
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
+const gambetta = localFont({
+  src: [
+    { path: "../public/fonts/Gambetta-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/Gambetta-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/Gambetta-Italic.woff2", weight: "400", style: "italic" },
+  ],
   display: "swap",
-  variable: "--font-instrument-serif",
+  fallback: ["Georgia"],
+  variable: "--font-gambetta",
 });
 
 const hankenGrotesk = Hanken_Grotesk({
@@ -32,7 +37,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en-US"
-      className={`${instrumentSerif.variable} ${hankenGrotesk.variable}`}
+      className={`${gambetta.variable} ${hankenGrotesk.variable}`}
     >
       <body className="flex min-h-screen flex-col">
         <a

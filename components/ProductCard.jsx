@@ -7,9 +7,9 @@ export default function ProductCard({ product, colorway = product.colorways[0] }
     <article className="flex h-full min-w-0 flex-col rounded-card bg-white p-2 md:p-4">
       <Link href={`/products/${product.handle}?colorway=${colorway}`} className="text-link block">
         <ProductImage image={product.images[colorway][0]} sizes="(max-width: 767px) 50vw, 25vw" />
-        <h3 className="mt-4 font-display text-[24px] leading-tight">{product.name}</h3>
+        <h3 className="product-title mt-4">{product.name}</h3>
       </Link>
-      <p className="mt-4">From {formatPrice(priceFrom(product))}</p>
+      <p className="price-small mt-4">From {formatPrice(priceFrom(product))}</p>
       <p className="mt-1 text-[14px] text-warmgrey">Preview sizes and colors</p>
       <ul aria-label="Preview colorways" className="mt-4 flex flex-wrap gap-2">
         {colorways.filter(({ id }) => product.colorways.includes(id)).map((color) => (

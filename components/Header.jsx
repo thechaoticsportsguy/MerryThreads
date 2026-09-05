@@ -137,12 +137,12 @@ export default function Header({ accountHref = "/account" }) {
       ref={headerRef}
       className="relative border-b border-softsage/30 bg-eggshell"
     >
-      <div className="mx-auto grid min-h-16 max-w-[1280px] grid-cols-[1fr_auto] items-center gap-4 px-6 py-4 md:grid-cols-[1fr_auto_1fr]">
+      <div className="mx-auto grid min-h-16 max-w-[1280px] grid-cols-[1fr_auto] items-center gap-2 px-6 py-4 max-[359px]:px-2 md:grid-cols-[1fr_auto_1fr] md:gap-4">
         <Link
           href="/"
           onClick={closeShop}
           aria-label="Merrythread home"
-          className="inline-flex items-center gap-3 justify-self-start font-display text-[24px] leading-tight font-normal md:text-[36px]"
+          className="brand-wordmark inline-flex items-center gap-3 justify-self-start"
         >
           <Logo />
           <span>Merrythread</span>
@@ -301,7 +301,7 @@ export default function Header({ accountHref = "/account" }) {
         <div className="flex items-center justify-between gap-4">
           <h2
             id="mobile-navigation-heading"
-            className="inline-flex items-center gap-3 font-display text-[28px] leading-tight font-normal"
+            className="brand-wordmark inline-flex items-center gap-3"
           >
             <Logo />
             <span>Merrythread</span>

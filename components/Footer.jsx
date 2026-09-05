@@ -30,7 +30,7 @@ export default function Footer() {
             <Link
               href="/"
               aria-label="Merrythread home"
-              className="inline-flex items-center gap-3 font-display text-[36px] leading-tight font-normal"
+              className="brand-wordmark inline-flex items-center gap-3"
             >
               <Logo />
               <span>Merrythread</span>
@@ -45,7 +45,7 @@ export default function Footer() {
           <nav aria-labelledby="footer-shop-heading">
             <h2
               id="footer-shop-heading"
-              className="font-display text-[28px] leading-tight font-normal"
+              className="eyebrow"
             >
               Shop
             </h2>
@@ -67,7 +67,7 @@ export default function Footer() {
           <nav aria-labelledby="footer-help-heading">
             <h2
               id="footer-help-heading"
-              className="font-display text-[28px] leading-tight font-normal"
+              className="eyebrow"
             >
               Help
             </h2>

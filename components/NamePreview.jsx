@@ -17,7 +17,7 @@ export function NameEmbroidery({ name, position }) {
 export default function NamePreview({ value, error, onChange, inputRef, previewImage }) {
   return (
     <div className="mt-10">
-      <label htmlFor="embroidered-name" className="block font-display text-[28px]">Make it theirs</label>
+      <label htmlFor="embroidered-name" className="personalization-label block">Make it theirs</label>
       <p id="name-hint" className="mt-2 text-[14px] text-warmgrey">One name, stitched on the chest pocket. Up to 12 characters.</p>
       <input ref={inputRef} id="embroidered-name" name="embroidered-name" type="text" autoComplete="off" spellCheck={false}
         value={value} onChange={(event) => onChange(event.target.value)}

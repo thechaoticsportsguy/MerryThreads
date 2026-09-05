@@ -1,5 +1,21 @@
 # Merrythread — project rules
 
+## Current typography direction (owner update, September 5, 2026)
+
+This update supersedes the older typography guidance below. Use Gambetta
+from local WOFF2 files via next/font/local as the display family, with regular
+and medium weights and restrained regular italic accents. Keep Hanken Grotesk
+for body, navigation, buttons, form labels, prices, and other functional UI.
+Never restore Instrument Serif or introduce the excluded modern font families.
+
+Use the shared typography classes and variables in app/globals.css. Major
+headings have slightly tight tracking and readable line height; small sans
+eyebrows may use uppercase and subtle tracking. Large headings stay in
+sentence case. Preserve the current structure, responsive behavior, and
+32px logo with a 12px wordmark gap. Do not add textures or ornaments.
+
+Font files and the original Fontshare license live in public/fonts.
+
 Personalised satin Christmas pyjamas. Names embroidered on each set. Sold as
 family bundles.
 

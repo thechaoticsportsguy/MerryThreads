@@ -12,11 +12,14 @@
   --color-softsage: #7C8F7B;
   --color-warmgrey: #6B665E;
 
-  --font-display: var(--font-instrument-serif), serif;
+  --font-display: var(--font-gambetta), Georgia, serif;
   --font-sans: var(--font-hanken-grotesk), sans-serif;
 
   --radius-btn: 8px;
   --radius-card: 16px;
+  --tracking-editorial: -0.025em;
+  --tracking-label: 0.09em;
+  --leading-editorial: 1.18;
 }
 
 @layer base {
@@ -46,14 +49,110 @@
   button:disabled {
     cursor: not-allowed;
   }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: var(--tracking-editorial);
+    text-wrap: balance;
+  }
+
+  header nav {
+    letter-spacing: 0.015em;
+  }
 }
 
 @layer components {
   .section-heading {
     font-family: var(--font-display);
     font-size: 28px;
+    font-weight: 500;
+    line-height: var(--leading-editorial);
+    max-width: 24ch;
+  }
+
+  .hero-heading {
+    font-family: var(--font-display);
+    font-size: clamp(34px, 4.2vw, 56px);
+    font-weight: 500;
+    line-height: var(--leading-editorial);
+    letter-spacing: var(--tracking-editorial);
+    max-width: 21ch;
+    text-wrap: balance;
+  }
+
+  .editorial-emphasis {
+    font-style: italic;
     font-weight: 400;
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .product-heading {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 3vw, 42px);
+    font-weight: 500;
+    line-height: var(--leading-editorial);
+    max-width: 19ch;
+  }
+
+  .product-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    text-wrap: pretty;
+  }
+
+  .price {
+    font-family: var(--font-sans);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .price-small {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ui-label {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .personalization-label {
+    font-family: var(--font-sans);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+
+  .brand-wordmark {
+    font-family: var(--font-display);
+    font-size: clamp(18px, 5vw, 24px);
+    font-weight: 500;
     line-height: 1.2;
+    letter-spacing: -0.035em;
+    white-space: nowrap;
+  }
+
+  footer .brand-wordmark {
+    font-size: clamp(24px, 2vw, 30px);
   }
 
   .button-primary {
@@ -68,6 +167,7 @@
     font-family: var(--font-sans);
     font-size: 15px;
     font-weight: 500;
+    letter-spacing: 0.025em;
     text-align: center;
     text-decoration-line: underline;
     text-decoration-color: transparent;
@@ -147,10 +247,13 @@
   }
 
   @media (min-width: 768px) {
+    .brand-wordmark { font-size: 28px; }
+    .product-title { font-size: 24px; }
     .section-heading {
       font-size: 36px;
     }
   }
+
 }
 
 @keyframes hero-fade {

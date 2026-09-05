@@ -60,16 +60,16 @@ export default function ProductDetails({ product, matchingProducts, initialColor
       <div className="grid min-w-0 gap-10 md:grid-cols-2 md:gap-16">
         <ProductGallery key={colorway} images={product.images[colorway]} name={name} />
         <div className="min-w-0">
-          <p className="text-[14px] text-warmgrey">A name on every set</p>
-          <h1 className="mt-2 font-display text-[36px] leading-tight">{product.name}</h1>
-          <p aria-live="polite" aria-atomic="true" className="mt-4 font-display text-[36px]" data-testid="product-price">{formatPrice(size.price)}<span className="sr-only"> for size {size.label}</span></p>
+          <p className="eyebrow text-warmgrey">A name on every set</p>
+          <h1 className="product-heading mt-4">{product.name}</h1>
+          <p aria-live="polite" aria-atomic="true" className="price mt-6" data-testid="product-price">{formatPrice(size.price)}<span className="sr-only"> for size {size.label}</span></p>
           <p className="mt-4">{product.description}</p>
           <aside className="mt-6 rounded-btn border border-softsage/30 p-4 text-[14px]" aria-label="Catalog preview notice">
             Preview only. Sizes, colors, and size-based prices are provisional. Fabric, care, and measurements await confirmation. Purchasing is unavailable.
           </aside>
           <form onSubmit={previewBag} className="mt-10" noValidate>
             <fieldset>
-              <legend className="text-[15px] font-medium">Color: {color.name}</legend>
+              <legend className="ui-label">Color: {color.name}</legend>
               <div className="mt-4 flex flex-wrap gap-4">
                 {colorways.filter(({ id }) => product.colorways.includes(id)).map((option) => (
                   <button key={option.id} type="button" aria-pressed={colorway === option.id} aria-label={`Color: ${option.name}`}
@@ -81,7 +81,7 @@ export default function ProductDetails({ product, matchingProducts, initialColor
               </div>
             </fieldset>
             <fieldset className="mt-8">
-              <legend className="text-[15px] font-medium">Size: {size.label}</legend>
+              <legend className="ui-label">Size: {size.label}</legend>
               <div className="mt-4 flex flex-wrap gap-2">
                 {product.sizes.map((option) => (
                   <button key={option.label} type="button" aria-pressed={size.label === option.label} aria-label={`Size ${option.label}`} onClick={() => { setSize(option); setMessage(""); }}
@@ -116,7 +116,7 @@ export default function ProductDetails({ product, matchingProducts, initialColor
         <div className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">{matchingProducts.filter((item) => item.colorways.includes(colorway)).map((item) => <ProductCard key={item.handle} product={item} colorway={colorway} />)}</div>
       </section>
       {showSticky && <div className="fixed inset-x-0 bottom-0 z-40 border-t border-softsage/30 bg-eggshell p-4 pb-[max(16px,env(safe-area-inset-bottom))] md:hidden" data-testid="sticky-purchase">
-        <div className="flex items-center justify-between gap-4"><div><p className="font-display text-[24px]">{formatPrice(size.price)}</p><p className="text-[14px]">Size {size.label} · Preview only</p></div><button type="button" onClick={previewBag} className="button-primary">Add to bag</button></div>
+        <div className="flex items-center justify-between gap-4"><div><p className="price">{formatPrice(size.price)}</p><p className="text-[14px]">Size {size.label} · Preview only</p></div><button type="button" onClick={previewBag} className="button-primary">Add to bag</button></div>
         {message && <p role="status" className="mt-2 text-[14px]">{message}</p>}
       </div>}
     </div>
